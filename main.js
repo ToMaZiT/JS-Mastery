@@ -1,8 +1,39 @@
-// Manejo del menú de planes
+// PLANS
 const startBtn = document.querySelector('.start-btn');
 const plansMenu = document.querySelector('.plans-menu');
 const closeBtn = document.querySelector('.close-btn');
 const viewPlansBtn = document.querySelector('.view-plans-btn');
+
+// NAVBAR
+const menuToggle = document.querySelector('.menu-toggle');
+const navButtons = document.querySelector('.nav-buttons');
+
+if (menuToggle && navButtons) {
+    menuToggle.addEventListener('click', () => {
+        navButtons.classList.toggle('active');
+    });
+
+    
+    document.addEventListener('click', (e) => {
+        if (!navButtons.contains(e.target) && !menuToggle.contains(e.target) && window.innerWidth <= 768) {
+            navButtons.classList.remove('active');
+        }
+    });
+}
+
+// Buttons clean navegation
+document.querySelectorAll('.nav-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const sectionId = button.getAttribute('data-section');
+        const section = document.querySelector(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+            if (window.innerWidth <= 768) {
+                navButtons.classList.remove('active'); // close menu
+            }
+        }
+    });
+});
 
 
 
@@ -29,13 +60,13 @@ if (viewPlansBtn && plansMenu) {
 
 if (closeBtn && plansMenu) {
     closeBtn.addEventListener('click', closePlansMenu);
-    // Cerrar al hacer clic fuera
+    // closing when clicks out the menu
     plansMenu.addEventListener('click', (e) => {
         if (e.target === plansMenu) {
             closePlansMenu();
         }
     });
-    // Cerrar con la tecla Esc
+    // close with ESC
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && plansMenu.classList.contains('show')) {
             closePlansMenu();
@@ -43,7 +74,7 @@ if (closeBtn && plansMenu) {
     });
 }
 
-// Manejo del acordeón
+// accordeon
 const toggles = document.querySelectorAll('.custom-toggle');
 
 toggles.forEach(toggle => {
@@ -62,7 +93,7 @@ toggles.forEach(toggle => {
     });
 });
 
-// Desplazamiento suave para los enlaces de navegación
+// clean navegation
 document.querySelectorAll('.menu a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -74,13 +105,13 @@ document.querySelectorAll('.menu a').forEach(anchor => {
     });
 });
 
-// Carrusel de testimonios
+// carrossel
 const testimonialGrid = document.querySelector('.testimonial-grid');
 const prevBtn = document.querySelector('.carousel-btn.prev');
 const nextBtn = document.querySelector('.carousel-btn.next');
 let currentIndex = 0;
 const totalItems = document.querySelectorAll('.testimonial-card').length;
-const visibleItems = 3; // Número de tarjetas visibles a la vez
+const visibleItems = 3; // visible cards number
 
 function updateCarousel() {
     const offset = -(currentIndex * (100 / visibleItems));

@@ -4,6 +4,11 @@ body {
     padding: 0;
     color: #2c2c2c;
     background-color: #f5f5f5;
+    box-sizing: border-box; 
+}
+
+* {
+    box-sizing: border-box; 
 }
 
 .navbar {
@@ -12,7 +17,74 @@ body {
     align-items: center;
     background-color: #1e90ff;
     color: white;
-    padding: 1rem 2rem;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none; /* Oculto por defecto */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+.nav-btn:hover {
+    background-color: #2563eb;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Muestra el botón hamburguesa */
+    }
+
+    .nav-buttons {
+        display: none; /* Oculta los botones por defecto en pantallas pequeñas */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #1e90ff;
+        flex-direction: column;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .nav-buttons.active {
+        display: flex; /* Muestra los botones al activar el menú */
+    }
+
+    .nav-btn {
+        width: 100%;
+        margin: 0.5rem 0;
+        font-size: 1.1rem;
+    }
 }
 
 .menu {
@@ -35,8 +107,10 @@ body {
     background: url('https://via.placeholder.com/1200x400?text=JavaScript+Course') center/cover no-repeat;
     color: white;
     text-align: center;
-    padding: 6rem 2rem;
+    padding: 6rem 1rem; 
     background-color: #1e90ff;
+    max-width: 100%; 
+    margin: 0 auto; 
 }
 
 .hero h1 {
@@ -65,7 +139,7 @@ button.start-btn:hover {
 
 .plans-menu {
     display: none;
-    position: fixed;
+    position: fixed; /* Fijo por defecto para cubrir la pantalla */
     top: 0;
     left: 0;
     width: 100%;
@@ -75,7 +149,7 @@ button.start-btn:hover {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 4rem 1rem; /* Aumentado el padding superior */
+    padding: 4rem 1rem;
     overflow-y: auto;
     transition: opacity 0.3s ease;
 }
@@ -83,19 +157,20 @@ button.start-btn:hover {
 .plans-menu.show {
     display: flex;
     opacity: 1;
+    height: 100%;
 }
 
 .plans-title {
     color: white;
     font-size: 2rem;
     margin-bottom: 2rem;
-    margin-top: 0; /* Aseguramos que no haya margen superior innecesario */
+    margin-top: 0;
     text-align: center;
 }
 
 .plans-menu .close-btn {
-    position: fixed; /* Cambiado a fixed para que siempre esté visible */
-    top: 10px; /* Ajustado para pantallas pequeñas */
+    position: fixed;
+    top: 10px;
     right: 10px;
     font-size: 1.5rem;
     background-color: #f87171;
@@ -105,7 +180,7 @@ button.start-btn:hover {
     padding: 0.5rem 0.8rem;
     border-radius: 50%;
     transition: background-color 0.3s ease;
-    z-index: 25; /* Aseguramos que esté por encima de otros elementos */
+    z-index: 25;
 }
 
 .plans-menu .close-btn:hover {
@@ -114,12 +189,12 @@ button.start-btn:hover {
 
 .plans-container {
     display: flex;
-    justify-content: center; /* Centrado uniforme */
-    align-items: flex-start; /* Alinea desde arriba */
-    gap: 1rem; /* Reducido para pantallas pequeñas */
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
     width: 100%;
-    max-width: 900px; /* Reducido para que quepan los 3 planes */
-    flex-wrap: nowrap; /* Evita el salto de línea */
+    max-width: 900px;
+    flex-wrap: wrap; /* Cambiado para permitir apilamiento */
 }
 
 .plan-card {
@@ -134,17 +209,59 @@ button.start-btn:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-height: 430px;
 }
 
-/* Ajuste responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .plans-menu {
+        position: absolute; /* Cambiado a absolute para no cubrir el hero */
+        top: 0; /* Ajustado para empezar desde la parte superior */
+        padding: 2rem 0.5rem; /* Reducido padding */
+        height: auto; /* Altura automática para no cubrir toda la pantalla */
+    }
+
+    .plans-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .plans-container {
+        flex-direction: column; /* Apila las tarjetas verticalmente */
+        gap: 0.5rem;
+        align-items: center;
+        width: 100%;
+    }
+
+    .plan-card {
+        width: 90%; /* Ocupa casi todo el ancho */
+        max-width: 300px;
+        padding: 1rem;
+        min-height: auto; /* Ajusta la altura al contenido */
+    }
+
+    .plan-card .price {
+        font-size: 1rem;
+    }
+
+    .plan-features li {
+        font-size: 0.85rem;
+    }
+
+    button.buy-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+
 @media (max-width: 900px) {
     .plans-container {
-        flex-wrap: wrap; /* Permitir salto de línea solo si es necesario */
+        flex-wrap: wrap; 
         justify-content: center;
     }
 
     .plan-card {
-        width: 90%; /* Más flexible en pantallas pequeñas */
+        width: 90%; 
         max-width: 300px;
     }
 }
@@ -270,7 +387,8 @@ button.buy-btn:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-bottom: 1px solid #e0e0e0; /* Línea divisoria */
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .benefits h2 {

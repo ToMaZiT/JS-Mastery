@@ -23,181 +23,182 @@
 <body>
 <nav class="navbar">
     <div class="logo">JS Mastery</div>
-    <ul class="menu">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#benefits">About</a></li>
-        <li><a href="#curriculum">Curriculum</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#footer">Contact</a></li>
-    </ul>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <div class="nav-buttons">
+        <button class="nav-btn" data-section="#hero">Home</button>
+        <button class="nav-btn" data-section="#benefits">About</button>
+        <button class="nav-btn" data-section="#curriculum">Curriculum</button>
+        <button class="nav-btn" data-section="#testimonials">Testimonials</button>
+        <button class="nav-btn" data-section="#footer">Contact</button>
+    </div>
 </nav>
 
 <header class="hero" id="hero">
     <h1>Master JavaScript from Scratch</h1>
-    <p>tart your web development journey with a course designed for beginners</p>
+    <p>Start your web development journey with a course designed for beginners</p>
     <button class="start-btn">Start Now</button>
 
     <div class="plans-menu">
-    <button class="close-btn" aria-label="Cerrar menú de planes">X</button>
-    <h2 class="plans-title">Elige tu plan perfecto</h2>
-    <div class="plans-container">
-        <div class="plan-card">
-            <h3>Basic Plan</h3>
-            <p class="price">$19.99 / month</p>
-            <ul class="plan-features">
-                <li>Acceso a los módulos 1 y 2</li>
-                <li>Proyectos prácticos básicos</li>
-                <li>Soporte por correo (respuesta en 48h)</li>
-                <li>Certificado al completar el curso</li>
-            </ul>
-            <button class="buy-btn">Buy Now</button>
-        </div>
-        <div class="plan-card">
-            <h3>Professional Plan</h3>
-            <p class="price">$39.99 / month</p>
-            <ul class="plan-features">
-                <li>Acceso a todos los módulos (1, 2 y 3)</li>
-                <li>Proyectos prácticos avanzados</li>
-                <li>Soporte 24/7 por chat y correo</li>
-                <li>Certificado al completar el curso</li>
-                <li>Acceso a comunidad privada</li>
-            </ul>
-            <button class="buy-btn">Buy Now</button>
-        </div>
-        <div class="plan-card">
-            <h3>Premium Plan</h3>
-            <p class="price">$59.99 / month</p>
-            <ul class="plan-features">
-                <li>Acceso a todos los módulos (1, 2 y 3)</li>
-                <li>Proyectos prácticos avanzados</li>
-                <li>Soporte 24/7 prioritario</li>
-                <li>Certificado al completar el curso</li>
-                <li>Acceso a comunidad privada</li>
-                <li>Sesiones 1:1 con un mentor</li>
-                <li>Acceso a recursos exclusivos</li>
-            </ul>
-            <button class="buy-btn">Buy Now</button>
+        <button class="close-btn" aria-label="Close plans menu">X</button>
+        <h2 class="plans-title">Choose Your Perfect Plan</h2>
+        <div class="plans-container">
+            <div class="plan-card">
+                <h3>Basic Plan</h3>
+                <p class="price">$19.99 / month</p>
+                <ul class="plan-features">
+                    <li>Access to modules 1 and 2</li>
+                    <li>Basic practical projects</li>
+                    <li>Support via email (response within 48h)</li>
+                    <li>Certificate upon course completion</li>
+                </ul>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="plan-card">
+                <h3>Professional Plan</h3>
+                <p class="price">$39.99 / month</p>
+                <ul class="plan-features">
+                    <li>Access to all modules (1, 2, and 3)</li>
+                    <li>Advanced practical projects</li>
+                    <li>24/7 support via chat and email</li>
+                    <li>Certificate upon course completion</li>
+                    <li>Access to private community</li>
+                </ul>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="plan-card">
+                <h3>Premium Plan</h3>
+                <p class="price">$59.99 / month</p>
+                <ul class="plan-features">
+                    <li>Access to all modules (1, 2, and 3)</li>
+                    <li>Advanced practical projects</li>
+                    <li>Priority 24/7 support</li>
+                    <li>Certificate upon course completion</li>
+                    <li>Access to private community</li>
+                    <li>1:1 sessions with a mentor</li>
+                    <li>Access to exclusive resources</li>
+                </ul>
+                <button class="buy-btn">Buy Now</button>
+            </div>
         </div>
     </div>
-</div>
 </header>
 
 <section class="benefits" id="benefits">
-    <h2>¿Por qué elegir este curso?</h2>
+    <h2>Why Choose This Course?</h2>
     <div class="benefits-grid">
         <div class="benefit-card">
             <div class="icons">
                 <i class="bi bi-alphabet-uppercase icon"></i>
             </div>
-            <h3>Aprendizaje práctico</h3>
-            <p>Desde el primer día trabajarás con proyectos reales, aprendiendo de forma práctica.</p>
+            <h3>Practical Learning</h3>
+            <p>From day one, you'll work on real projects, learning in a hands-on way.</p>
         </div>
         <div class="benefit-card">
             <div class="icons">
                 <i class="bi bi-cast icon"></i>
             </div>
-            <h3>Flexibilidad total</h3>
-            <p>Accede al contenido desde cualquier lugar, en cualquier momento. Aprende a tu ritmo.</p>
+            <h3>Total Flexibility</h3>
+            <p>Access the content from anywhere, anytime. Learn at your own pace.</p>
         </div>
         <div class="benefit-card">
             <div class="icons">
                 <i class="bi bi-chat-text icon"></i>
             </div>
-            <h3>Soporte 24/7</h3>
-            <p>El equipo de soporte está disponible para ayudarte en cualquier momento del día.</p>
+            <h3>24/7 Support</h3>
+            <p>Our support team is available to assist you at any time of the day.</p>
         </div>
     </div>
 </section>
 
 <section class="curriculum" id="curriculum">
-    <h2>Plan de Estudios</h2>
+    <h2>Curriculum</h2>
     <div class="curriculum-grid">
         <div class="curriculum-card">
             <div class="custom-toggle" role="button" tabindex="0" aria-expanded="false">
-                <div class="summary">📘 Módulo 1 – Fundamentos de JS</div>
+                <div class="summary">📘 Module 1 – JavaScript Fundamentals</div>
                 <div class="details-content">
                     <ul>
-                        <li>Variables y tipos de datos</li>
-                        <li>Operadores y expresiones</li>
-                        <li>Condicionales y bucles</li>
+                        <li>Variables and data types</li>
+                        <li>Operators and expressions</li>
+                        <li>Conditionals and loops</li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="curriculum-card">
             <div class="custom-toggle" role="button" tabindex="0" aria-expanded="false">
-                <div class="summary">💻 Módulo 2 – DOM y Eventos</div>
+                <div class="summary">💻 Module 2 – DOM and Events</div>
                 <div class="details-content">
                     <ul>
-                        <li>Manipulación del DOM</li>
-                        <li>Eventos y escuchadores</li>
-                        <li>Interactividad básica</li>
+                        <li>DOM manipulation</li>
+                        <li>Events and listeners</li>
+                        <li>Basic interactivity</li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="curriculum-card">
             <div class="custom-toggle" role="button" tabindex="0" aria-expanded="false">
-                <div class="summary">🚀 Módulo 3 – Proyectos prácticos</div>
+                <div class="summary">🚀 Module 3 – Practical Projects</div>
                 <div class="details-content">
                     <ul>
                         <li>To-Do List</li>
-                        <li>Calculadora</li>
-                        <li>Mini-juego con JS</li>
+                        <li>Calculator</li>
+                        <li>Mini-game with JS</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
     <div class="curriculum-cta">
-        <button class="view-plans-btn">Ver más detalles</button>
+        <button class="view-plans-btn">View More Details</button>
     </div>
 </section>
 
 <section class="testimonials" id="testimonials">
-    <h2>Lo que dicen nuestros estudiantes</h2>
+    <h2>What Our Students Say</h2>
     <div class="testimonial-carousel">
-        <button class="carousel-btn prev" aria-label="Testimonio anterior">&#9664;</button>
+        <button class="carousel-btn prev" aria-label="Previous testimonial">◀</button>
         <div class="testimonial-grid">
             <div class="testimonial-card">
-                <p>"Gracias a este curso conseguí mi primer trabajo como desarrollador junior."</p>
+                <p>"Thanks to this course, I landed my first job as a junior developer."</p>
                 <span>– Lucas R.</span>
             </div>
             <div class="testimonial-card">
-                <p>"Muy bien explicado y con proyectos reales desde el inicio."</p>
-                <span>– Sofía M.</span>
+                <p>"Very well explained and with real projects from the start."</p>
+                <span>– Sofia M.</span>
             </div>
             <div class="testimonial-card">
-                <p>"Me encantó la claridad de los videos y el enfoque práctico. ¡Súper recomendado!"</p>
-                <span>– Martín G.</span>
+                <p>"I loved the clarity of the videos and the practical focus. Highly recommended!"</p>
+                <span>– Martin G.</span>
             </div>
             <div class="testimonial-card">
-                <p>"Nunca había programado antes y ahora puedo hacer mis propios proyectos."</p>
+                <p>"I had never programmed before, and now I can create my own projects."</p>
                 <span>– Valeria T.</span>
             </div>
             <div class="testimonial-card">
-                <p>"La sección de DOM me ayudó a entender lo que nunca entendía en otros cursos."</p>
+                <p>"The DOM section helped me understand what I never got in other courses."</p>
                 <span>– Diego F.</span>
             </div>
             <div class="testimonial-card">
-                <p>"El instructor responde dudas rápido y el contenido está actualizado."</p>
+                <p>"The instructor responds quickly, and the content is up to date."</p>
                 <span>– Camila S.</span>
             </div>
         </div>
-        <button class="carousel-btn next" aria-label="Testimonio siguiente">&#9654;</button>
+        <button class="carousel-btn next" aria-label="Next testimonial">▶</button>
     </div>
 </section>
 
 <footer class="footer" id="footer">
-    <p>© 2025 JS Mastery | Síguenos en redes sociales</p>
+    <p>© 2025 JS Mastery | Follow us on social media</p>
     <div class="social-links">
-        <a href="https://www.linkedin.com/in/tom%C3%A1s-flores-a97a53253/" target="_blank" aria-label="Twitter"><i class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/tom%C3%A1s-flores-a97a53253/" target="_blank" aria-label="Instagram"><i class="bi bi-whatsapp"></i></a>
+        <a href="https://github.com/ToMaZiT" target="_blank" aria-label="Github"><i class="bi bi-github"></i></a>
+        <a href="https://api.whatsapp.com/send?phone=543413690901&text=%C2%A1Hola!%20Estoy%20interesado%20en%20una%20p%C3%A1gina%20web..." target="_blank" aria-label="Whatsapp"><i class="bi bi-whatsapp"></i></a>
         <a href="https://www.linkedin.com/in/tom%C3%A1s-flores-a97a53253/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
     </div>
     <form action="/subscribe" method="post">
-        <input type="email" placeholder="Tu correo para novedades" required>
-        <button type="submit">Suscribirse</button>
+        <input type="email" placeholder="Your email for updates" required>
+        <button type="submit">Subscribe</button>
     </form>
 </footer>
 
