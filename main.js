@@ -61,7 +61,10 @@ if (viewPlansBtn && plansMenu) {
         plansMenu.classList.add('show');
         plansMenu.style.opacity = '1';
         document.body.classList.add('plans-open');
-        plansMenu.scrollTop = 0; // Asegura que el primer plan sea visible
+        plansMenu.scrollTop = 0; 
+
+        window.scrollTo({ top: 0, behavior: 'auto' });
+  
     });
 }
 
